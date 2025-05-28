@@ -1,0 +1,10 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+<h1>This is the home page.</h1>
+    <nav>
+        <a href="{% url 'turo_parser' %}">Turo Parser</a> |
+        <a href="{% url 'parserg' %}">Generic Email Parser</a> |
+        <a href="{% url 'vehicleparser' %}">Vehicle Type Email Parser</a> |
+        <a href="{% url 'surprice' %}">SurPrice Email Parser</a> |
+    </nav>
+{% endblock %}

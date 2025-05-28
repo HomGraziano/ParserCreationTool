@@ -1,0 +1,20 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+<h2>Enter Vehicle Classes</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+
+    <table>
+        {% for subform in formset %}
+        <tr>
+            <td>{{ subform.sipp_code.label_tag }} {{ subform.sipp_code }}</td>
+            <td>{{ subform.class_id.label_tag }} {{ subform.class_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <input type="hidden" name="step" value="vehicles">
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

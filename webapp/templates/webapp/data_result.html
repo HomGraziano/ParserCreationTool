@@ -1,0 +1,9 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+<h2>JSON Preview for {{ tenant }}</h2>
+<pre>{{ data|safe }}</pre>
+<a href="{% url 'home' %}">Back</a>
+<a href="{% url 'download_json' %}">
+    <button type="button">Download JSON</button>
+</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+<h1>Step 1: Main Form</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Continue to Locations →</button>
+</form>
+{% endblock %}

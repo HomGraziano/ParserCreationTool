@@ -1,0 +1,25 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+<h2>Enter Location Info</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+
+    <table>
+        {% for subform in formset %}
+        <tr>
+            <td>{{ subform.address.label_tag }} {{ subform.address }}</td>
+            <td>{{ subform.location_id.label_tag }} {{ subform.location_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="hidden" name="step" value="location">
+    {% if step == 'location' %}
+    <button type="submit">Continue to Vehicles</button>
+    {% else %}
+    <button type="submit">Submit</button>
+    {% endif %}
+
+
+</form>
+{% endblock %}
